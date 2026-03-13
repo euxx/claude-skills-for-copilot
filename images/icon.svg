@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Background: rounded rect, gray fill, subtle border -->
+  <rect x="2" y="2" width="124" height="124" rx="22" ry="22"
+        fill="#1e1e20" stroke="#4c4c54" stroke-width="2"/>
+
+  <!-- Skill graph: 5 nodes connected in a hub-and-spoke pattern -->
+  <!-- Center node -->
+  <circle cx="64" cy="64" r="9" fill="#e0e0e0"/>
+  <!-- Spoke lines -->
+  <line x1="64" y1="64" x2="64"  y2="30"  stroke="#a0a0a8" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="64" y1="64" x2="97"  y2="47"  stroke="#a0a0a8" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="64" y1="64" x2="87"  y2="90"  stroke="#a0a0a8" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="64" y1="64" x2="41"  y2="90"  stroke="#a0a0a8" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="64" y1="64" x2="31"  y2="47"  stroke="#a0a0a8" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Outer nodes -->
+  <circle cx="64"  cy="30" r="6" fill="#c0c0c8"/>
+  <circle cx="97"  cy="47" r="6" fill="#c0c0c8"/>
+  <circle cx="87"  cy="90" r="6" fill="#c0c0c8"/>
+  <circle cx="41"  cy="90" r="6" fill="#c0c0c8"/>
+  <circle cx="31"  cy="47" r="6" fill="#c0c0c8"/>
+</svg>
