@@ -1,7 +1,7 @@
 ---
 name: test-analyzer
 description: Reviews test coverage quality from a behavioral perspective, identifying critical gaps and test quality issues. Does not check line coverage — checks meaningful scenario coverage. Use after adding or modifying tests.
-argument-hint: "[file, directory, or test suite to analyze]"
+argument-hint: '[file, directory, or test suite to analyze]'
 user-invocable: true
 ---
 
@@ -14,16 +14,18 @@ Review test coverage quality from a behavioral perspective. Identify missing sce
 ### 1. Critical Gap Detection
 
 Identify untested or inadequately tested scenarios:
+
 - **Error handling paths**: `throw`, rejected promises, network failures, validation errors
 - **Boundary conditions**: empty collections, null/undefined inputs, max values, type edges
 - **State transitions**: concurrent operations, partial failures, interrupted sequences
 - **Business logic**: the core value-producing behaviors of the code
-- **Security-relevant inputs**: injection attempts, oversized inputs, malformed data *(skip if the code has no external input surface)*
+- **Security-relevant inputs**: injection attempts, oversized inputs, malformed data _(skip if the code has no external input surface)_
 
 ### 2. Test Quality Assessment
 
 Evaluate tests against DAMP principles (Descriptive And Meaningful Phrases):
-- **Resilience**: Do tests break on implementation changes that don't affect behavior? If so, they're testing *how* not *what*.
+
+- **Resilience**: Do tests break on implementation changes that don't affect behavior? If so, they're testing _how_ not _what_.
 - **Descriptiveness**: Does the test name describe the behavior under test or the input?
 - **Isolation**: Do tests depend on each other or on external state?
 - **Completeness**: Does each test assert enough to be meaningful?
@@ -42,6 +44,7 @@ Evaluate tests against DAMP principles (Descriptive And Meaningful Phrases):
 ## Priority Rating
 
 For each identified gap or issue, assign a priority 1–10:
+
 - 8–10: Critical — this gap could allow a serious production bug through
 - 5–7: Important — meaningful coverage that should exist
 - 1–4: Nice to have — improves completeness but lower risk

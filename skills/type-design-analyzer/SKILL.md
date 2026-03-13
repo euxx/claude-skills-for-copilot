@@ -1,7 +1,7 @@
 ---
 name: type-design-analyzer
 description: Analyzes type design quality by rating encapsulation, invariant expression, usefulness, and enforcement. Helps design types that make invalid states unrepresentable. Use when reviewing new types or data models.
-argument-hint: "[file or directory with types/interfaces to analyze]"
+argument-hint: '[file or directory with types/interfaces to analyze]'
 user-invocable: true
 ---
 
@@ -27,7 +27,6 @@ Evaluate the quality of type definitions, interfaces, and data models. The goal 
    - Ordering or structural requirements
 
 3. **Rate each type** across four dimensions (1–10 scale):
-
    - **Encapsulation** (1–10): Can external code access and mutate internals that should be private?
    - **Invariant Expression** (1–10): Are the invariants visible in the type definition itself, or only in documentation?
    - **Invariant Usefulness** (1–10): Do the expressed invariants represent meaningful real-world constraints?

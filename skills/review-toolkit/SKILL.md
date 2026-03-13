@@ -1,7 +1,7 @@
 ---
 name: review-toolkit
 description: Orchestrates a comprehensive code review using up to 6 specialist skills. Dispatches code-review, code-simplifier, comment-analyzer, silent-failure-hunter, type-design-analyzer, and test-analyzer based on the scope of changes. Use for thorough end-to-end review of code changes.
-argument-hint: "[file, directory, or git diff to review]"
+argument-hint: '[file, directory, or git diff to review]'
 user-invocable: true
 ---
 
@@ -11,27 +11,30 @@ Comprehensive code review orchestrator. Dispatches specialist review agents base
 
 ## Specialist Skills
 
-| Skill | Purpose |
-|---|---|
-| **code-review** | Bugs, security issues, correctness, AGENTS.md violations |
-| **code-simplifier** | Unnecessary complexity, duplication, readability |
-| **comment-analyzer** | Comment accuracy, comment rot, misleading documentation |
-| **silent-failure-hunter** | Silent errors, inadequate user feedback, catch block quality |
-| **type-design-analyzer** | Type encapsulation, invariant expression and enforcement |
-| **test-analyzer** | Behavioral coverage gaps, test quality, anti-pattern detection |
+| Skill                     | Purpose                                                        |
+| ------------------------- | -------------------------------------------------------------- |
+| **code-review**           | Bugs, security issues, correctness, AGENTS.md violations       |
+| **code-simplifier**       | Unnecessary complexity, duplication, readability               |
+| **comment-analyzer**      | Comment accuracy, comment rot, misleading documentation        |
+| **silent-failure-hunter** | Silent errors, inadequate user feedback, catch block quality   |
+| **type-design-analyzer**  | Type encapsulation, invariant expression and enforcement       |
+| **test-analyzer**         | Behavioral coverage gaps, test quality, anti-pattern detection |
 
 ## Dispatch Rules
 
 Always run:
+
 - **code-review** — applies to any code change
 
 Run when applicable:
+
 - **test-analyzer** — test files modified or new behavior added
 - **silent-failure-hunter** — error handling code modified (`try/catch`, error callbacks, fallbacks)
 - **type-design-analyzer** — new types, interfaces, or data models added or significantly changed
 - **comment-analyzer** — documentation comments or inline comments added/modified
 
 Run after correctness is confirmed (regardless of other findings):
+
 - **code-simplifier** — once critical bugs and coverage gaps are resolved
 
 ## Process

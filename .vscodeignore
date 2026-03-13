@@ -1,2 +1,5 @@
 .gitignore
+.husky/
 images/icon.svg
+node_modules/
+package-lock.json

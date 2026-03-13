@@ -1,7 +1,7 @@
 ---
 name: comment-analyzer
 description: Analyzes code comments for accuracy, completeness, and long-term maintainability. Detects comment rot and misleading documentation. Use after adding or modifying code comments.
-argument-hint: "[file or directory to analyze]"
+argument-hint: '[file or directory to analyze]'
 user-invocable: true
 ---
 
@@ -32,7 +32,7 @@ Analyze code comments for accuracy, completeness, and long-term maintainability.
 
 3. **Evaluate Long-term Value**:
    - Comments that merely restate obvious code should be flagged for removal
-   - Comments explaining *why* are more valuable than those explaining *what*
+   - Comments explaining _why_ are more valuable than those explaining _what_
    - Comments that will become outdated with likely future changes should be reconsidered
    - Avoid comments referencing temporary states or transitional implementations
 

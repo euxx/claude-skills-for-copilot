@@ -1,7 +1,7 @@
 ---
 name: feature-dev
 description: Guided feature development with multi-agent codebase understanding, architecture design, and implementation review. Use when starting a new feature or implementing a significant change.
-argument-hint: "[feature description]"
+argument-hint: '[feature description]'
 user-invocable: true
 ---
 
@@ -26,6 +26,7 @@ You are helping a developer implement a new feature. Follow a systematic approac
 Initial request: $ARGUMENTS
 
 **Actions**:
+
 1. Create a todo list with all phases.
 2. If the feature is unclear, ask the user:
    - What problem are they solving?
@@ -40,6 +41,7 @@ Initial request: $ARGUMENTS
 **Goal**: Understand relevant existing code and patterns at both high and low levels.
 
 **Actions**:
+
 1. Launch 2–3 code-explorer sub-agents in parallel. Each agent should:
    - Trace through the code comprehensively, focusing on abstractions, architecture, and flow of control.
    - Target a different aspect of the codebase (e.g. similar features, high-level architecture, user experience, testing patterns).
@@ -63,6 +65,7 @@ Initial request: $ARGUMENTS
 **CRITICAL**: This is one of the most important phases. DO NOT SKIP.
 
 **Actions**:
+
 1. Review the codebase findings and original feature request.
 2. Identify underspecified aspects: edge cases, error handling, integration points, scope boundaries, design preferences, backward compatibility, performance needs.
 3. **Present all questions to the user in a clear, organized list.**
@@ -77,6 +80,7 @@ If the user says "whatever you think is best", provide your recommendation and g
 **Goal**: Design multiple implementation approaches with different trade-offs.
 
 **Actions**:
+
 1. Launch 2–3 code-architect sub-agents in parallel with different focuses:
    - **Minimal changes**: smallest change, maximum reuse of existing code.
    - **Clean architecture**: maintainability, elegant abstractions.
@@ -94,6 +98,7 @@ If the user says "whatever you think is best", provide your recommendation and g
 **DO NOT START WITHOUT USER APPROVAL.**
 
 **Actions**:
+
 1. Wait for explicit user approval.
 2. Read all relevant files identified in previous phases.
 3. Implement following chosen architecture.
@@ -108,6 +113,7 @@ If the user says "whatever you think is best", provide your recommendation and g
 **Goal**: Ensure code is simple, DRY, elegant, easy to read, and functionally correct.
 
 **Actions**:
+
 1. Launch 3 code-reviewer sub-agents in parallel with different focuses:
    - Simplicity, DRY, and elegance.
    - Bugs and functional correctness.
@@ -123,6 +129,7 @@ If the user says "whatever you think is best", provide your recommendation and g
 **Goal**: Document what was accomplished.
 
 **Actions**:
+
 1. Mark all todos complete.
 2. Summarize:
    - What was built
