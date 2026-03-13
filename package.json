@@ -1,0 +1,31 @@
+{
+  "name": "claude-skills-for-copilot",
+  "displayName": "Claude Skills for Copilot",
+  "description": "Agent skills for GitHub Copilot, adapted from anthropics/claude-plugins-official: code-review, feature-dev, frontend-design, and more.",
+  "version": "0.0.1",
+  "publisher": "euxx",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/euxx/claude-skills-for-copilot"
+  },
+  "categories": [
+    "AI"
+  ],
+  "contributes": {
+    "chatSkills": [
+      { "path": "./skills/code-review/SKILL.md" },
+      { "path": "./skills/code-simplifier/SKILL.md" },
+      { "path": "./skills/comment-analyzer/SKILL.md" },
+      { "path": "./skills/feature-dev/SKILL.md" },
+      { "path": "./skills/frontend-design/SKILL.md" },
+      { "path": "./skills/review-toolkit/SKILL.md" },
+      { "path": "./skills/silent-failure-hunter/SKILL.md" },
+      { "path": "./skills/test-analyzer/SKILL.md" },
+      { "path": "./skills/type-design-analyzer/SKILL.md" }
+    ]
+  }
+}
