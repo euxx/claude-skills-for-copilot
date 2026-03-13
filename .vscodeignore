@@ -1,5 +1,8 @@
 .gitignore
 .husky/
+AGENTS.md
+DEVELOPMENT.md
+RELEASE.md
 images/icon.svg
 node_modules/
 package-lock.json

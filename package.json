@@ -16,8 +16,11 @@
     "AI"
   ],
   "scripts": {
+    "vscode:prepublish": "npm run ci",
+    "package": "vsce package --no-dependencies",
     "format": "prettier --write \"**/*.md\"",
     "format:check": "prettier --check \"**/*.md\"",
+    "ci": "npm run format:check",
     "prepare": "husky"
   },
   "devDependencies": {
