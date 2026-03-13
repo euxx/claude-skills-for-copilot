@@ -1,5 +1,7 @@
 # Claude Skills for Copilot
 
+[![VS Code Marketplace](https://img.shields.io/badge/VS%20Code-Marketplace-blue?logo=visual-studio-code&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=euxx.claude-skills-for-copilot)
+
 VS Code agent plugin that bundles specialized skills from [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) for use with GitHub Copilot.
 
 ## Skills
