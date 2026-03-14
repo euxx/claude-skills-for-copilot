@@ -7,36 +7,38 @@
 
 2. Update version in `package.json`:
 
-   ```sh
+   ```bash
    # Edit package.json to set "version": "X.Y.Z"
+   npm install  # sync package-lock.json
    ```
 
 3. Commit and push:
 
-   ```sh
-   git add CHANGELOG.md package.json
+   ```bash
+   git add CHANGELOG.md package.json package-lock.json
    git commit -m "chore: update version to vX.Y.Z"
    git push origin main
    ```
 
-4. Package the extension and create a GitHub release:
+4. Run the release workflow:
 
-   ```sh
-   npm run package
-   gh release create vX.Y.Z claude-skills-for-copilot-X.Y.Z.vsix \
-     --title "vX.Y.Z" \
-     --notes "..."
+   ```bash
+   gh workflow run release.yml
    ```
 
-5. Verify the release was created successfully:
+   This runs tests, packages the extension as `.vsix`, and creates a GitHub Release with the file attached.
 
-   ```sh
+5. Verify the release:
+
+   ```bash
    gh release view vX.Y.Z
    ```
 
+<!-- END-SHARED -->
+
 6. Update the release notes on GitHub to match `CHANGELOG.md`:
 
-   ```sh
+   ```bash
    gh release edit vX.Y.Z --notes "## What's Changed
    - Change 1
    - Change 2

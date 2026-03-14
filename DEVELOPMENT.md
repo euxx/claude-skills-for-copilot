@@ -2,8 +2,8 @@
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) 20+
-- [VS Code](https://code.visualstudio.com/)
+- [Node.js](https://nodejs.org/) 18+
+- [VS Code](https://code.visualstudio.com/) with the Extension Development Host
 
 ## Setup
 
@@ -13,52 +13,43 @@
    npm install
    ```
 
+## Running the Extension
+
+Open the project in VS Code and press **F5** to launch the Extension Development Host. The extension activates automatically on startup.
+
 ## Scripts
 
-| Command                | Description                        |
-| ---------------------- | ---------------------------------- |
-| `npm run ci`           | Run all checks (format check)      |
-| `npm run format`       | Format markdown with Prettier      |
-| `npm run format:check` | Check markdown formatting          |
-| `npm run package`      | Build a local `.vsix` package file |
+| Command                | Description                           |
+| ---------------------- | ------------------------------------- |
+| `npm run ci`           | Run all checks (test + lint + format) |
+| `npm test`             | Run tests (Vitest)                    |
+| `npm run lint`         | Lint code (ESLint)                    |
+| `npm run lint:fix`     | Lint and auto-fix                     |
+| `npm run format`       | Format code with Prettier             |
+| `npm run format:check` | Check code formatting                 |
+| `npm run package`      | Package extension as `.vsix`          |
 
-## Adding a Skill
+## Testing
 
-1. Create a new directory under `skills/`:
-   ```
-   skills/<skill-name>/SKILL.md
-   ```
-2. Write the skill using the [VS Code Agent Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills) specification.
-3. The `name` field in the SKILL.md frontmatter must match the directory name.
-4. Register the skill in `package.json` under `contributes.chatSkills`:
-   ```json
-   { "path": "./skills/<skill-name>/SKILL.md" }
-   ```
-5. Run `npm run format` to format the new file.
-
-## Project Structure
-
-```
-skills/
-└── <skill-name>/
-    └── SKILL.md    # Skill definition (YAML frontmatter + markdown body)
-images/
-├── icon.png        # Extension icon (512×512 recommended)
-└── icon.svg        # Source vector icon
+```bash
+npm test     # Run all tests
+npm run ci   # Run tests + lint + format check in one step
 ```
 
-## Installation (local)
+Tests use [Vitest](https://vitest.dev/).
 
-Add to VS Code `settings.json`:
+## Local Packaging
 
-```json
-"chat.plugins.paths": {
-    "/path/to/claude-skills-for-copilot": true
-}
+```bash
+npm run package
 ```
 
-Or install the packaged VSIX:
+This produces a `.vsix` file. To install it locally:
 
-```sh
-code --install-extension claude-skills-for-copilot-0.0.1.vsix
+```bash
+code --install-extension my-extension-0.0.1.vsix
 ```
+
+Or use **Extensions: Install from VSIX** in the VS Code UI.
+
+<!-- END-SHARED -->
