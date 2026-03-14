@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.0.2] - 2026-03-14
+
+### Changed
+
+- Improved README: clarified description, expanded Usage section, added License
+- Updated package description
+
 ## [0.0.1] - 2026-03-13
 
 ### Added

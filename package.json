@@ -1,8 +1,8 @@
 {
   "name": "claude-skills-for-copilot",
   "displayName": "Claude Skills for Copilot",
-  "description": "Agent skills for GitHub Copilot, adapted from anthropics/claude-plugins-official: code-review, feature-dev, frontend-design, and more.",
-  "version": "0.0.1",
+  "description": "GitHub Copilot agent skills adapted from the official Claude plugins (anthropics/claude-plugins-official): code-review, code-simplifier, and more.",
+  "version": "0.0.2",
   "publisher": "euxx",
   "engines": {
     "vscode": "^1.95.0"
