@@ -26,4 +26,6 @@ GitHub Copilot agent skills adapted from the [official Claude plugins](https://g
 
 ## License
 
-Under the [MIT](LICENSE) License.
+This project is licensed under [MIT](LICENSE).
+
+Portions of the skill definitions are adapted from [claude-plugins-official](https://github.com/anthropics/claude-plugins-official) by Anthropic, which is licensed under the [Apache License 2.0](LICENSE-APACHE). Changes were made to adapt the content from Claude Code agent skills to VS Code Copilot agent skills format.
