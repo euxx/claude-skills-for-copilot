@@ -1,8 +1,8 @@
 # Claude Skills for Copilot
 
-[![VS Code Marketplace](https://img.shields.io/badge/VS%20Code-Marketplace-blue?logo=visual-studio-code&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=euxx.claude-skills-for-copilot)
+GitHub Copilot agent skills adapted from the [official Claude plugins](https://github.com/anthropics/claude-plugins-official).
 
-VS Code agent plugin that bundles specialized skills from [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) for use with GitHub Copilot.
+[![VS Code Marketplace](https://img.shields.io/badge/VS%20Code-Marketplace-blue?logo=visual-studio-code&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=euxx.claude-skills-for-copilot)
 
 ## Skills
 
@@ -18,22 +18,12 @@ VS Code agent plugin that bundles specialized skills from [anthropics/claude-plu
 | `/test-analyzer`         | Behavioral test coverage review — gaps, not just line coverage       |
 | `/type-design-analyzer`  | Type design quality: invariants, encapsulation, enforcement          |
 
-## Installation
-
-**Local plugin** — clone the repo and add the path to VS Code `settings.json`:
-
-```json
-"chat.plugins.paths": {
-    "/path/to/claude-skills-for-copilot": true
-}
-```
-
-**VS Code extension** — install via VSIX:
-
-```sh
-vsce package && code --install-extension claude-skills-for-copilot-0.0.1.vsix
-```
-
 ## Usage
 
-Type `/` in the Copilot chat input to see all available skills.
+**Slash command** — type `/` to see available skills, then select or type the skill name (e.g., `/code-review`).
+
+**Auto-invocation** — in agent mode, Copilot automatically uses skills relevant to your task.
+
+## License
+
+Under the [MIT](LICENSE) License.
