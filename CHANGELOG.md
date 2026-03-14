@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.0.5] - 2026-03-14
+
+### Changed
+
+- Updated README: added adaptation details with per-skill breakdowns
+
 ## [0.0.4] - 2026-03-14
 
 ### Added
