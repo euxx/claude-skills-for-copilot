@@ -15,11 +15,12 @@
 
 ## Scripts
 
-| Command                | Description                   |
-| ---------------------- | ----------------------------- |
-| `npm run ci`           | Run all checks (format check) |
-| `npm run format`       | Format markdown with Prettier |
-| `npm run format:check` | Check markdown formatting     |
+| Command                | Description                        |
+| ---------------------- | ---------------------------------- |
+| `npm run ci`           | Run all checks (format check)      |
+| `npm run format`       | Format markdown with Prettier      |
+| `npm run format:check` | Check markdown formatting          |
+| `npm run package`      | Build a local `.vsix` package file |
 
 ## Adding a Skill
 
