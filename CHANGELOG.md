@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.0.6] - 2026-03-14
+
+### Added
+
+- Added GitHub Actions workflows for CI and automated release
+
+### Changed
+
+- Standardized icon spec
+- Synced config and docs from template
+
 ## [0.0.5] - 2026-03-14
 
 ### Changed
