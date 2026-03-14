@@ -17,16 +17,16 @@
   ],
   "scripts": {
     "vscode:prepublish": "npm run ci",
-    "package": "npx @vscode/vsce package --no-dependencies",
+    "ci": "npm run format:check",
     "format": "prettier --write \"**/*.md\"",
     "format:check": "prettier --check \"**/*.md\"",
-    "ci": "npm run format:check",
+    "package": "npx @vscode/vsce package --no-dependencies",
     "prepare": "husky"
   },
   "devDependencies": {
-    "husky": "^9.1.7",
-    "lint-staged": "^16.3.2",
-    "prettier": "^3.0.0"
+    "husky": "latest",
+    "lint-staged": "latest",
+    "prettier": "latest"
   },
   "lint-staged": {
     "*.md": [
@@ -35,15 +35,33 @@
   },
   "contributes": {
     "chatSkills": [
-      { "path": "./skills/code-review/SKILL.md" },
-      { "path": "./skills/code-simplifier/SKILL.md" },
-      { "path": "./skills/comment-analyzer/SKILL.md" },
-      { "path": "./skills/feature-dev/SKILL.md" },
-      { "path": "./skills/frontend-design/SKILL.md" },
-      { "path": "./skills/review-toolkit/SKILL.md" },
-      { "path": "./skills/silent-failure-hunter/SKILL.md" },
-      { "path": "./skills/test-analyzer/SKILL.md" },
-      { "path": "./skills/type-design-analyzer/SKILL.md" }
+      {
+        "path": "./skills/code-review/SKILL.md"
+      },
+      {
+        "path": "./skills/code-simplifier/SKILL.md"
+      },
+      {
+        "path": "./skills/comment-analyzer/SKILL.md"
+      },
+      {
+        "path": "./skills/feature-dev/SKILL.md"
+      },
+      {
+        "path": "./skills/frontend-design/SKILL.md"
+      },
+      {
+        "path": "./skills/review-toolkit/SKILL.md"
+      },
+      {
+        "path": "./skills/silent-failure-hunter/SKILL.md"
+      },
+      {
+        "path": "./skills/test-analyzer/SKILL.md"
+      },
+      {
+        "path": "./skills/type-design-analyzer/SKILL.md"
+      }
     ]
   }
 }
