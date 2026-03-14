@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.0.4] - 2026-03-14
+
+### Added
+
+- Added `LICENSE-APACHE` (Apache 2.0 license text) for adapted skill content
+- Added attribution notice in README for upstream source (anthropics/claude-plugins-official)
+
 ## [0.0.3] - 2026-03-14
 
 ### Changed
