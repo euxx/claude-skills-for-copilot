@@ -12,7 +12,15 @@
    npm install  # sync package-lock.json
    ```
 
-3. Commit and push:
+3. Verify packaging locally:
+
+   ```bash
+   npm run package
+   ```
+
+   Confirm the `.vsix` file is generated without errors. You may keep it for manual testing.
+
+4. Commit and push:
 
    ```bash
    git add CHANGELOG.md package.json package-lock.json
@@ -20,7 +28,7 @@
    git push origin main
    ```
 
-4. Run the release workflow:
+5. Run the release workflow:
 
    ```bash
    gh workflow run release.yml
@@ -28,7 +36,7 @@
 
    This runs tests, packages the extension as `.vsix`, and creates a GitHub Release with the file attached.
 
-5. Verify the release:
+6. Verify the release:
 
    ```bash
    gh release view vX.Y.Z
@@ -36,7 +44,7 @@
 
 <!-- END-SHARED -->
 
-6. Update the release notes on GitHub to match `CHANGELOG.md`:
+7. Update the release notes on GitHub to match `CHANGELOG.md`:
 
    ```bash
    gh release edit vX.Y.Z --notes "## What's Changed

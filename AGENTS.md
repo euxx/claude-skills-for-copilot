@@ -2,14 +2,10 @@
 
 ## After Making Changes
 
-After modifying skill files, run the following to maintain quality:
+After modifying code, run:
 
-- `npm run ci` - Run all checks (format check)
+- `npm run ci` — tests + lint + format check
 
-Or run individually:
+See [DEVELOPMENT.md](DEVELOPMENT.md) for all available scripts.
 
-- `npm run format` - Format all markdown files with Prettier
-- `npm run format:check` - Check formatting without writing
-
-Refer to [DEVELOPMENT.md](DEVELOPMENT.md) for project setup and technical details.
-Refer to [RELEASE.md](RELEASE.md) for release steps.
+See [RELEASE.md](RELEASE.md) for the release process.

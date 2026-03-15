@@ -1,9 +1,11 @@
 # Dependencies
 node_modules/
+package-lock.json
 
 # Build
 *.vsix
 out/
+coverage/
 
 # IDE / OS
 .DS_Store

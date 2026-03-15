@@ -13,6 +13,7 @@ DEVELOPMENT.md
 PLAN.md
 RELEASE.md
 *.vsix
+coverage/
 node_modules/
 package-lock.json
 images/icon.svg
