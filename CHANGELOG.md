@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.0.7] - 2026-03-16
+
+### Changed
+
+- Expanded conventions file support across skills to `AGENTS.md`, `CLAUDE.md`, and `GEMINI.md` with priority `AGENTS.md -> CLAUDE.md -> GEMINI.md`
+- Updated review and simplification skill guidance from AGENTS-only checks to `AGENTS.md` or similar conventions files
+- Updated README usage with a direct-invocation example for explicitly selecting a skill
+
 ## [0.0.6] - 2026-03-14
 
 ### Added
