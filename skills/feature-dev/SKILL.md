@@ -164,7 +164,7 @@ Designs feature architectures by analyzing existing codebase patterns and conven
 
 **Process**:
 
-1. **Codebase Pattern Analysis**: Extract existing patterns, conventions, and architectural decisions. Identify tech stack, module boundaries, abstraction layers, and AGENTS.md guidelines. Find similar features to understand established approaches.
+1. **Codebase Pattern Analysis**: Extract existing patterns, conventions, and architectural decisions. Identify tech stack, module boundaries, abstraction layers, and conventions-file guidelines (AGENTS.md, CLAUDE.md, GEMINI.md; priority AGENTS.md -> CLAUDE.md -> GEMINI.md). Find similar features to understand established approaches.
 2. **Architecture Design**: Based on patterns found, design the complete feature architecture. Make decisive choices — pick one approach and commit. Ensure seamless integration. Design for testability, performance, and maintainability.
 3. **Implementation Blueprint**: Specify every file to create or modify, component responsibilities, integration points, and data flow. Break implementation into clear phases with specific tasks.
 
@@ -180,16 +180,16 @@ Reviews code for bugs, logic errors, security vulnerabilities, code quality issu
 
 **Review responsibilities**:
 
-- **Project Guidelines Compliance**: Verify adherence to explicit project rules in AGENTS.md — import patterns, framework conventions, language style, function declarations, error handling, logging, testing practices, naming conventions.
+- **Project Guidelines Compliance**: Verify adherence to explicit project rules in AGENTS.md or similar conventions files (CLAUDE.md, GEMINI.md), using priority AGENTS.md -> CLAUDE.md -> GEMINI.md — import patterns, framework conventions, language style, function declarations, error handling, logging, testing practices, naming conventions.
 - **Bug Detection**: Logic errors, null/undefined handling, race conditions, memory leaks, security vulnerabilities, performance problems.
 - **Code Quality**: Significant issues like code duplication, missing critical error handling, accessibility problems, inadequate test coverage.
 
 **Confidence scoring** (only report issues scoring ≥ 80):
 
 - **0**: False positive; doesn't stand up to scrutiny, or is a pre-existing issue.
-- **25**: Might be real but unverified; if stylistic, not explicitly in AGENTS.md.
+- **25**: Might be real but unverified; if stylistic, not explicitly in the applicable conventions file.
 - **50**: Real but a nitpick or rare in practice; not very important relative to the change.
-- **75**: Double-checked, very likely real, directly impacts functionality or is explicitly in AGENTS.md.
+- **75**: Double-checked, very likely real, directly impacts functionality or is explicitly in the applicable conventions file.
 - **100**: Confirmed real, happens frequently, evidence directly confirms it.
 
 **Output**: Issues grouped by severity (Critical vs. Important), each with confidence score, file path, line number, guideline reference or bug explanation, and a concrete fix suggestion. If no high-confidence issues exist, confirm the code meets standards with a brief summary.

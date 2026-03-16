@@ -11,14 +11,14 @@ Comprehensive code review orchestrator. Dispatches specialist review agents base
 
 ## Specialist Skills
 
-| Skill                     | Purpose                                                        |
-| ------------------------- | -------------------------------------------------------------- |
-| **code-review**           | Bugs, security issues, correctness, AGENTS.md violations       |
-| **code-simplifier**       | Unnecessary complexity, duplication, readability               |
-| **comment-analyzer**      | Comment accuracy, comment rot, misleading documentation        |
-| **silent-failure-hunter** | Silent errors, inadequate user feedback, catch block quality   |
-| **type-design-analyzer**  | Type encapsulation, invariant expression and enforcement       |
-| **test-analyzer**         | Behavioral coverage gaps, test quality, anti-pattern detection |
+| Skill                     | Purpose                                                         |
+| ------------------------- | --------------------------------------------------------------- |
+| **code-review**           | Bugs, security issues, correctness, conventions-file violations |
+| **code-simplifier**       | Unnecessary complexity, duplication, readability                |
+| **comment-analyzer**      | Comment accuracy, comment rot, misleading documentation         |
+| **silent-failure-hunter** | Silent errors, inadequate user feedback, catch block quality    |
+| **type-design-analyzer**  | Type encapsulation, invariant expression and enforcement        |
+| **test-analyzer**         | Behavioral coverage gaps, test quality, anti-pattern detection  |
 
 ## Dispatch Rules
 

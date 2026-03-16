@@ -8,7 +8,7 @@ GitHub Copilot agent skills adapted from the [official Claude plugins](https://g
 
 | Skill                    | Description                                                          |
 | ------------------------ | -------------------------------------------------------------------- |
-| `/code-review`           | Multi-agent code review: bugs, security, AGENTS.md violations        |
+| `/code-review`           | Multi-agent code review: bugs, security, conventions-file violations |
 | `/code-simplifier`       | Simplify and refine code for clarity and maintainability             |
 | `/comment-analyzer`      | Detect comment rot and misleading documentation                      |
 | `/feature-dev`           | Guided feature development with architecture design and review       |
@@ -24,6 +24,8 @@ GitHub Copilot agent skills adapted from the [official Claude plugins](https://g
 
 **Auto-invocation** — in agent mode, Copilot automatically uses skills relevant to your task.
 
+**Direct invocation by instruction** — explicitly tell the agent which skill to run in natural language (e.g., "Please review code changes by code review skill").
+
 ## Adaptation Details
 
 All skills are adapted from [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) (Apache 2.0). The source plugins target Claude Code (CLI); these versions are rewritten for VS Code Copilot agent skills format.
@@ -32,13 +34,13 @@ All skills are adapted from [anthropics/claude-plugins-official](https://github.
 
 Every skill went through the following transformations:
 
-| Change            | Original (Claude Code)                                             | Adapted (VS Code Copilot)                                                |
-| ----------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| File format       | `agent`/`command` YAML frontmatter with `model:`, `allowed-tools:` | `SKILL.md` with `name`, `description`, `argument-hint`, `user-invocable` |
-| Tooling           | `Bash(gh pr view …)`, `TodoWrite`, `$ARGUMENTS`                    | Generic VS Code Copilot tool references                                  |
-| Description field | Long XML `<example>` chat transcripts embedded in frontmatter      | Single-sentence description                                              |
-| Convention file   | `CLAUDE.md`                                                        | `AGENTS.md`                                                              |
-| Model names       | `claude-haiku-4-5`, `claude-sonnet-4-5`, `claude-opus-4-5`         | Generic sub-agent references                                             |
+| Change            | Original (Claude Code)                                             | Adapted (VS Code Copilot)                                                                             |
+| ----------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| File format       | `agent`/`command` YAML frontmatter with `model:`, `allowed-tools:` | `SKILL.md` with `name`, `description`, `argument-hint`, `user-invocable`                              |
+| Tooling           | `Bash(gh pr view …)`, `TodoWrite`, `$ARGUMENTS`                    | Generic VS Code Copilot tool references                                                               |
+| Description field | Long XML `<example>` chat transcripts embedded in frontmatter      | Single-sentence description                                                                           |
+| Convention file   | `CLAUDE.md`                                                        | `AGENTS.md` or similar (`CLAUDE.md`, `GEMINI.md`) with priority `AGENTS.md -> CLAUDE.md -> GEMINI.md` |
+| Model names       | `claude-haiku-4-5`, `claude-sonnet-4-5`, `claude-opus-4-5`         | Generic sub-agent references                                                                          |
 
 ### Per-skill details
 
@@ -52,7 +54,7 @@ The original is a PR-focused command that reads the diff via `gh pr diff` and sp
 
 - Removed all `gh` CLI usage; the skill now works on any file, directory, diff, or codebase passed as an argument
 - Replaced named Anthropic model invocations with generic sub-agent calls
-- Replaced CLAUDE.md with AGENTS.md as the project conventions file
+- Replaced single-file CLAUDE.md convention lookup with AGENTS.md or similar conventions files (`CLAUDE.md`, `GEMINI.md`) in priority order: `AGENTS.md -> CLAUDE.md -> GEMINI.md`
 
 ---
 

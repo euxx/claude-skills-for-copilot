@@ -17,7 +17,7 @@ Never change what the code does — only how it does it. All original features, 
 
 ### 2. Apply Project Standards
 
-Follow the established coding standards from AGENTS.md. Consult AGENTS.md for language, naming, and style conventions specific to the project.
+Follow the established coding standards from AGENTS.md or similar conventions files (CLAUDE.md, GEMINI.md), using priority order AGENTS.md -> CLAUDE.md -> GEMINI.md. Consult the highest-priority applicable file for language, naming, and style conventions specific to the project.
 
 ### 3. Enhance Clarity
 
@@ -56,7 +56,7 @@ When given a broader scope, prioritize files with the most complexity or recent 
 
 1. Identify the recently modified code sections
 2. Analyze for opportunities to improve elegance and consistency
-3. Apply project-specific best practices from AGENTS.md
+3. Apply project-specific best practices from AGENTS.md or similar conventions files (CLAUDE.md, GEMINI.md), using priority order AGENTS.md -> CLAUDE.md -> GEMINI.md
 4. Ensure all functionality remains unchanged
 5. Verify the refined code is simpler and more maintainable
 6. Document only significant changes that affect understanding
