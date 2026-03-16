@@ -24,7 +24,7 @@ GitHub Copilot agent skills adapted from the [official Claude plugins](https://g
 
 **Auto-invocation** — in agent mode, Copilot automatically uses skills relevant to your task.
 
-**Direct invocation by instruction** — explicitly tell the agent which skill to run in natural language (e.g., "Please review code changes by code review skill").
+**By instruction** — explicitly tell the agent in natural language (e.g., "Please review code changes by code review skill").
 
 ## Adaptation Details
 
