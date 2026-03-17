@@ -2,7 +2,7 @@
   "name": "claude-skills-for-copilot",
   "displayName": "Claude Skills for Copilot",
   "description": "GitHub Copilot agent skills adapted from Anthropic Claude plugins and OpenAI Codex Skills.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "publisher": "euxx",
   "engines": {
     "vscode": "^1.95.0"

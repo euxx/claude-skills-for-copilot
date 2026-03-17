@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-03-17
+
+### Added
+
+- Added `/security-threat-model` skill — AppSec-grade threat modeling: trust boundaries, abuse paths, mitigations, and a Markdown threat model with Mermaid diagram (adapted from OpenAI Codex Skills)
+
+### Changed
+
+- Updated GitHub Actions CI and release workflows, including support for overwriting an existing release when rerunning the release workflow
+
 ## [0.2.0] - 2026-03-17
 
 ### Added
