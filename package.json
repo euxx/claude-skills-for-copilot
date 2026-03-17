@@ -1,7 +1,7 @@
 {
   "name": "claude-skills-for-copilot",
   "displayName": "Claude Skills for Copilot",
-  "description": "GitHub Copilot agent skills adapted from the official Claude plugins: code-review, code-simplifier, and more.",
+  "description": "GitHub Copilot agent skills adapted from Anthropic Claude plugins and OpenAI Codex Skills.",
   "version": "0.1.0",
   "publisher": "euxx",
   "engines": {
@@ -45,10 +45,19 @@
         "path": "./skills/comment-analyzer/SKILL.md"
       },
       {
+        "path": "./skills/conventions-improver/SKILL.md"
+      },
+      {
         "path": "./skills/feature-dev/SKILL.md"
       },
       {
         "path": "./skills/frontend-design/SKILL.md"
+      },
+      {
+        "path": "./skills/gh-address-comments/SKILL.md"
+      },
+      {
+        "path": "./skills/gh-fix-ci/SKILL.md"
       },
       {
         "path": "./skills/review-toolkit/SKILL.md"

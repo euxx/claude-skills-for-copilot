@@ -53,3 +53,14 @@ code --install-extension my-extension-0.0.1.vsix
 Or use **Extensions: Install from VSIX** in the VS Code UI.
 
 <!-- END-SHARED -->
+
+## Adding a New Skill
+
+1. Create `skills/<skill-name>/SKILL.md` with the skill content.
+2. Register it in `package.json` under `contributes.chatSkills` (keep entries alphabetical):
+   ```json
+   { "path": "./skills/<skill-name>/SKILL.md" }
+   ```
+3. Add the skill to the skills table in `README.md` and the per-skill details section under the correct source group.
+4. Check the source license: the `LICENSE-APACHE` at the repo root covers both Anthropic and OpenAI sources (Apache 2.0). If adapting from a different source, verify its license is compatible and update the `README.md` License section.
+5. Run `npm run ci` to verify formatting.

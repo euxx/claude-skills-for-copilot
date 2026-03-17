@@ -1,23 +1,25 @@
 # Claude Skills for Copilot
 
-GitHub Copilot agent skills adapted from the [official Claude plugins](https://github.com/anthropics/claude-plugins-official).
+GitHub Copilot agent skills adapted from [Anthropic Claude plugins](https://github.com/anthropics/claude-plugins-official) and [OpenAI Codex Skills](https://github.com/openai/skills).
 
 [![VS Code Marketplace](https://img.shields.io/badge/VS%20Code-Marketplace-blue?logo=visual-studio-code&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=euxx.claude-skills-for-copilot)
 
 ## Skills
 
-| Skill                    | Description                                                          |
-| ------------------------ | -------------------------------------------------------------------- |
-| `/code-review`           | Multi-agent code review: bugs, security, conventions-file violations |
-| `/code-simplifier`       | Simplify and refine code for clarity and maintainability             |
-| `/comment-analyzer`      | Detect comment rot and misleading documentation                      |
-| `/conventions-improver`  | Audit and improve AGENTS.md/CLAUDE.md/GEMINI.md quality              |
-| `/feature-dev`           | Guided feature development with architecture design and review       |
-| `/frontend-design`       | Create production-grade frontend interfaces with high design quality |
-| `/review-toolkit`        | Orchestrated end-to-end review (up to 6 specialist sub-skills)       |
-| `/silent-failure-hunter` | Find silent failures, swallowed errors, and unjustified fallbacks    |
-| `/test-analyzer`         | Behavioral test coverage review — gaps, not just line coverage       |
-| `/type-design-analyzer`  | Type design quality: invariants, encapsulation, enforcement          |
+| Skill                    | Description                                                          | Source    |
+| ------------------------ | -------------------------------------------------------------------- | --------- |
+| `/code-review`           | Multi-agent code review: bugs, security, conventions-file violations | Anthropic |
+| `/code-simplifier`       | Simplify and refine code for clarity and maintainability             | Anthropic |
+| `/comment-analyzer`      | Detect comment rot and misleading documentation                      | Anthropic |
+| `/conventions-improver`  | Audit and improve AGENTS.md/CLAUDE.md/GEMINI.md quality              | Anthropic |
+| `/feature-dev`           | Guided feature development with architecture design and review       | Anthropic |
+| `/frontend-design`       | Create production-grade frontend interfaces with high design quality | Anthropic |
+| `/gh-address-comments`   | Fetch PR review comments and address the selected ones via gh CLI    | OpenAI    |
+| `/gh-fix-ci`             | Debug failing GitHub Actions CI checks and fix after approval        | OpenAI    |
+| `/review-toolkit`        | Orchestrated end-to-end review (up to 6 specialist sub-skills)       | Anthropic |
+| `/silent-failure-hunter` | Find silent failures, swallowed errors, and unjustified fallbacks    | Anthropic |
+| `/test-analyzer`         | Behavioral test coverage review — gaps, not just line coverage       | Anthropic |
+| `/type-design-analyzer`  | Type design quality: invariants, encapsulation, enforcement          | Anthropic |
 
 ## Usage
 
@@ -29,11 +31,15 @@ GitHub Copilot agent skills adapted from the [official Claude plugins](https://g
 
 ## Adaptation Details
 
-All skills are adapted from [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) (Apache 2.0). The source plugins target Claude Code (CLI); these versions are rewritten for VS Code Copilot agent skills format.
+Skills are adapted from two open-source repositories, both rewritten for VS Code Copilot agent skills format.
 
-### Common changes
+### From Anthropic Claude Plugins
 
-Every skill went through the following transformations:
+Source: [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) (Apache 2.0). The original plugins target Claude Code (CLI).
+
+#### Common changes
+
+Every skill from this source went through the following transformations:
 
 | Change            | Original (Claude Code)                                             | Adapted (VS Code Copilot)                                                                             |
 | ----------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
@@ -42,8 +48,6 @@ Every skill went through the following transformations:
 | Description field | Long XML `<example>` chat transcripts embedded in frontmatter      | Single-sentence description                                                                           |
 | Convention file   | `CLAUDE.md`                                                        | `AGENTS.md` or similar (`CLAUDE.md`, `GEMINI.md`) with priority `AGENTS.md -> CLAUDE.md -> GEMINI.md` |
 | Model names       | `claude-haiku-4-5`, `claude-sonnet-4-5`, `claude-opus-4-5`         | Generic sub-agent references                                                                          |
-
-### Per-skill details
 
 #### `/code-review`
 
@@ -190,8 +194,50 @@ The original agent has an informal instruction style and uses XML `<example>` tr
 - Reformatted the analysis framework as numbered steps with a 4-dimension rating rubric (invariants, encapsulation, enforcement, expressiveness; each scored 1–10)
 - Added `argument-hint` for user-facing guidance
 
+---
+
+### From OpenAI Codex Skills
+
+Source: [openai/skills](https://github.com/openai/skills) (Apache 2.0 per-skill). The original skills target the OpenAI Codex agent.
+
+#### Common changes
+
+| Change            | Original (OpenAI Codex)                                                    | Adapted (VS Code Copilot)                                               |
+| ----------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| File format       | Separate `agents/openai.yaml` for UI config (display name, icons, prompt)  | Removed; `argument-hint` and `user-invocable: true` added to `SKILL.md` |
+| Bundled scripts   | Python `scripts/` helpers called by the workflow                           | Replaced with inline `gh` CLI commands                                  |
+| Platform-specific | `create-plan` skill, `sandbox_permissions=require_escalated` auth commands | Removed                                                                 |
+
+#### `/gh-address-comments`
+
+**Source:** [`skills/.curated/gh-address-comments/SKILL.md`](https://github.com/openai/skills/blob/main/skills/.curated/gh-address-comments/SKILL.md)
+
+The original skill uses a bundled Python script (`scripts/fetch_comments.py`) to fetch PR comments via the GitHub GraphQL API. It also refers to OpenAI Codex–specific auth sandbox commands (`sandbox_permissions=require_escalated`).
+
+**Changes:**
+
+- Replaced the Python script call with an inline `gh api graphql` command block that fetches conversation comments, reviews, and review threads directly
+- Added a REST fallback (`gh pr view --json reviews,comments`) for environments where GraphQL is unavailable
+- Removed Codex sandbox-specific auth instructions
+- Added `argument-hint` and `user-invocable: true` frontmatter fields
+
+---
+
+#### `/gh-fix-ci`
+
+**Source:** [`skills/.curated/gh-fix-ci/SKILL.md`](https://github.com/openai/skills/blob/main/skills/.curated/gh-fix-ci/SKILL.md)
+
+The original skill orchestrates a Python script (`scripts/inspect_pr_checks.py`, 509 lines) to fetch failing check logs. It also references the Codex-specific `create-plan` skill for the approval step.
+
+**Changes:**
+
+- Replaced the Python script call with the manual `gh` CLI commands already present in the original as a fallback (the script is a convenience wrapper around the same `gh run view` and `gh api` calls)
+- Replaced `create-plan` skill invocation with an inline plan-and-approval step
+- Removed Codex sandbox-specific auth instructions
+- Added `argument-hint` and `user-invocable: true` frontmatter fields
+
 ## License
 
 This project is licensed under [MIT](LICENSE).
 
-Portions of the skill definitions are adapted from [claude-plugins-official](https://github.com/anthropics/claude-plugins-official) by Anthropic, which is licensed under the [Apache License 2.0](LICENSE-APACHE). Changes were made to adapt the content from Claude Code agent skills to VS Code Copilot agent skills format.
+Portions of the skill definitions are adapted from [claude-plugins-official](https://github.com/anthropics/claude-plugins-official) by Anthropic and from [openai/skills](https://github.com/openai/skills) by OpenAI, both licensed under the [Apache License 2.0](LICENSE-APACHE). Changes were made to adapt the content to VS Code Copilot agent skills format.
