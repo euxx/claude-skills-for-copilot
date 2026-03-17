@@ -23,7 +23,7 @@
 4. Commit and push:
 
    ```bash
-   git add CHANGELOG.md package.json package-lock.json
+   git add CHANGELOG.md package.json
    git commit -m "chore: update version to vX.Y.Z"
    git push origin main
    ```
@@ -35,6 +35,12 @@
    ```
 
    This runs tests, packages the extension as `.vsix`, and creates a GitHub Release with the file attached.
+
+   To overwrite an existing release for the same version:
+
+   ```bash
+   gh workflow run release.yml -f overwrite=true
+   ```
 
 6. Verify the release:
 
