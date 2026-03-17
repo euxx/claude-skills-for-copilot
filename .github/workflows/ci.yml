@@ -8,7 +8,7 @@ on:
 
 jobs:
   ci:
-    name: Check Formatting
+    name: CI
     runs-on: ubuntu-latest
 
     steps:
@@ -22,6 +22,12 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: Lint
+        run: npm run lint
 
       - name: Check formatting
         run: npm run format:check

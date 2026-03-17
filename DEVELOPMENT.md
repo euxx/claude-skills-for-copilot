@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) 18+
+- [Node.js](https://nodejs.org/) 22+
 - [VS Code](https://code.visualstudio.com/) with the Extension Development Host
 
 ## Setup
@@ -21,8 +21,8 @@ Open the project in VS Code and press **F5** to launch the Extension Development
 
 | Command                | Description                           |
 | ---------------------- | ------------------------------------- |
-| `npm run ci`           | Run all checks (test + lint + format) |
 | `npm test`             | Run tests (Vitest)                    |
+| `npm run ci`           | Run all checks (test + lint + format) |
 | `npm run lint`         | Lint code (ESLint)                    |
 | `npm run lint:fix`     | Lint and auto-fix                     |
 | `npm run format`       | Format code with Prettier             |

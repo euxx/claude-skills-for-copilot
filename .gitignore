@@ -13,3 +13,6 @@ coverage/
 .idea/
 *.swp
 *.swo
+
+# Environment / secrets
+.env*
