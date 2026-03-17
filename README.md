@@ -6,20 +6,21 @@ GitHub Copilot agent skills adapted from [Anthropic Claude plugins](https://gith
 
 ## Skills
 
-| Skill                    | Description                                                          | Source    |
-| ------------------------ | -------------------------------------------------------------------- | --------- |
-| `/code-review`           | Multi-agent code review: bugs, security, conventions-file violations | Anthropic |
-| `/code-simplifier`       | Simplify and refine code for clarity and maintainability             | Anthropic |
-| `/comment-analyzer`      | Detect comment rot and misleading documentation                      | Anthropic |
-| `/conventions-improver`  | Audit and improve AGENTS.md/CLAUDE.md/GEMINI.md quality              | Anthropic |
-| `/feature-dev`           | Guided feature development with architecture design and review       | Anthropic |
-| `/frontend-design`       | Create production-grade frontend interfaces with high design quality | Anthropic |
-| `/gh-address-comments`   | Fetch PR review comments and address the selected ones via gh CLI    | OpenAI    |
-| `/gh-fix-ci`             | Debug failing GitHub Actions CI checks and fix after approval        | OpenAI    |
-| `/review-toolkit`        | Orchestrated end-to-end review (up to 6 specialist sub-skills)       | Anthropic |
-| `/silent-failure-hunter` | Find silent failures, swallowed errors, and unjustified fallbacks    | Anthropic |
-| `/test-analyzer`         | Behavioral test coverage review — gaps, not just line coverage       | Anthropic |
-| `/type-design-analyzer`  | Type design quality: invariants, encapsulation, enforcement          | Anthropic |
+| Skill                    | Description                                                           | Source    |
+| ------------------------ | --------------------------------------------------------------------- | --------- |
+| `/code-review`           | Multi-agent code review: bugs, security, conventions-file violations  | Anthropic |
+| `/code-simplifier`       | Simplify and refine code for clarity and maintainability              | Anthropic |
+| `/comment-analyzer`      | Detect comment rot and misleading documentation                       | Anthropic |
+| `/conventions-improver`  | Audit and improve AGENTS.md/CLAUDE.md/GEMINI.md quality               | Anthropic |
+| `/feature-dev`           | Guided feature development with architecture design and review        | Anthropic |
+| `/frontend-design`       | Create production-grade frontend interfaces with high design quality  | Anthropic |
+| `/gh-address-comments`   | Fetch PR review comments and address the selected ones via gh CLI     | OpenAI    |
+| `/gh-fix-ci`             | Debug failing GitHub Actions CI checks and fix after approval         | OpenAI    |
+| `/review-toolkit`        | Orchestrated end-to-end review (up to 6 specialist sub-skills)        | Anthropic |
+| `/security-threat-model` | AppSec-grade threat model: trust boundaries, abuse paths, mitigations | OpenAI    |
+| `/silent-failure-hunter` | Find silent failures, swallowed errors, and unjustified fallbacks     | Anthropic |
+| `/test-analyzer`         | Behavioral test coverage review — gaps, not just line coverage        | Anthropic |
+| `/type-design-analyzer`  | Type design quality: invariants, encapsulation, enforcement           | Anthropic |
 
 ## Usage
 
@@ -202,11 +203,12 @@ Source: [openai/skills](https://github.com/openai/skills) (Apache 2.0 per-skill)
 
 #### Common changes
 
-| Change            | Original (OpenAI Codex)                                                    | Adapted (VS Code Copilot)                                               |
-| ----------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| File format       | Separate `agents/openai.yaml` for UI config (display name, icons, prompt)  | Removed; `argument-hint` and `user-invocable: true` added to `SKILL.md` |
-| Bundled scripts   | Python `scripts/` helpers called by the workflow                           | Replaced with inline `gh` CLI commands                                  |
-| Platform-specific | `create-plan` skill, `sandbox_permissions=require_escalated` auth commands | Removed                                                                 |
+| Change            | Original (OpenAI Codex)                                                                      | Adapted (VS Code Copilot)                                               |
+| ----------------- | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| File format       | Separate `agents/openai.yaml` for UI config (display name, icons, prompt)                    | Removed; `argument-hint` and `user-invocable: true` added to `SKILL.md` |
+| Bundled scripts   | Python `scripts/` helpers called by the workflow (gh-fix-ci, gh-address-comments)            | Replaced with inline `gh` CLI commands                                  |
+| Reference files   | Companion `references/` files carrying output contracts and guidance (security-threat-model) | Inlined into `SKILL.md`                                                 |
+| Platform-specific | `create-plan` skill, `sandbox_permissions=require_escalated` auth commands                   | Removed                                                                 |
 
 #### `/gh-address-comments`
 
@@ -234,6 +236,21 @@ The original skill orchestrates a Python script (`scripts/inspect_pr_checks.py`,
 - Replaced the Python script call with the manual `gh` CLI commands already present in the original as a fallback (the script is a convenience wrapper around the same `gh run view` and `gh api` calls)
 - Replaced `create-plan` skill invocation with an inline plan-and-approval step
 - Removed Codex sandbox-specific auth instructions
+- Added `argument-hint` and `user-invocable: true` frontmatter fields
+
+---
+
+#### `/security-threat-model`
+
+**Source:** [`skills/.curated/security-threat-model/SKILL.md`](https://github.com/openai/skills/blob/main/skills/.curated/security-threat-model/SKILL.md)
+
+The original skill references two companion files (`references/prompt-template.md` and `references/security-controls-and-assets.md`) that carry the output contract and quality rules.
+
+**Changes:**
+
+- Inlined the output format contract and evidence-grounding rules from `prompt-template.md` directly into `SKILL.md` (VS Code skills support only a single `SKILL.md` file)
+- Inlined the Mermaid diagram rules and required output section list
+- Removed references to the separate `references/` directory
 - Added `argument-hint` and `user-invocable: true` frontmatter fields
 
 ## License

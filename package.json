@@ -63,6 +63,9 @@
         "path": "./skills/review-toolkit/SKILL.md"
       },
       {
+        "path": "./skills/security-threat-model/SKILL.md"
+      },
+      {
         "path": "./skills/silent-failure-hunter/SKILL.md"
       },
       {
