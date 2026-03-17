@@ -2,7 +2,7 @@
   "name": "claude-skills-for-copilot",
   "displayName": "Claude Skills for Copilot",
   "description": "GitHub Copilot agent skills adapted from the official Claude plugins: code-review, code-simplifier, and more.",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "publisher": "euxx",
   "engines": {
     "vscode": "^1.95.0"

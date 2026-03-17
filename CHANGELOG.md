@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-03-16
+
+### Added
+
+- Added `/conventions-improver` skill — audits and improves project conventions files (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`) with quality scoring (6 criteria, 100-point rubric) and targeted update suggestions
+
+### Changed
+
+- Simplified wording in README usage instructions
+
 ## [0.0.7] - 2026-03-16
 
 ### Changed
