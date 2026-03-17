@@ -17,7 +17,9 @@
   ],
   "scripts": {
     "vscode:prepublish": "npm run ci",
-    "ci": "npm run format:check",
+    "ci": "npm run test && npm run lint && npm run format:check",
+    "test": "echo 'No tests'  && exit 0",
+    "lint": "echo 'No lint'  && exit 0",
     "format": "prettier --write \"**/*.md\"",
     "format:check": "prettier --check \"**/*.md\"",
     "package": "npx @vscode/vsce package --no-dependencies",
