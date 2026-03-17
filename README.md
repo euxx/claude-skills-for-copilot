@@ -11,6 +11,7 @@ GitHub Copilot agent skills adapted from the [official Claude plugins](https://g
 | `/code-review`           | Multi-agent code review: bugs, security, conventions-file violations |
 | `/code-simplifier`       | Simplify and refine code for clarity and maintainability             |
 | `/comment-analyzer`      | Detect comment rot and misleading documentation                      |
+| `/conventions-improver`  | Audit and improve AGENTS.md/CLAUDE.md/GEMINI.md quality              |
 | `/feature-dev`           | Guided feature development with architecture design and review       |
 | `/frontend-design`       | Create production-grade frontend interfaces with high design quality |
 | `/review-toolkit`        | Orchestrated end-to-end review (up to 6 specialist sub-skills)       |
@@ -83,6 +84,22 @@ The original agent embeds lengthy XML `<example>` transcripts inside the `descri
 - Stripped all XML examples from the frontmatter description
 - Restructured the body as a numbered analysis framework (comment types → accuracy check → completeness check → maintainability check → scoring)
 - Added `argument-hint` for user-facing guidance
+
+---
+
+#### `/conventions-improver`
+
+**Source:** [`plugins/claude-md-management/skills/claude-md-improver/SKILL.md`](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/claude-md-management/skills/claude-md-improver/SKILL.md)
+
+The original skill audits and improves `CLAUDE.md` files in Claude Code projects. It references Claude Code–specific file types (`.claude.local.md`, `~/.claude/CLAUDE.md`), the `#` key shortcut for incorporating learnings, and uses tool declarations (`Read`, `Glob`, `Grep`, `Bash`, `Edit`). Quality criteria and templates are stored in separate `references/` files.
+
+**Changes:**
+
+- Renamed from `claude-md-improver` to `conventions-improver` to reflect the broader scope
+- Generalised from `CLAUDE.md`-only to support `AGENTS.md`, `CLAUDE.md`, and `GEMINI.md` with priority order `AGENTS.md -> CLAUDE.md -> GEMINI.md`
+- Removed Claude Code–specific file types (`.claude.local.md`, global `~/.claude/CLAUDE.md`, the `#` shortcut tip)
+- Removed tool declarations from YAML frontmatter
+- Embedded quality-criteria and templates content inline (single self-contained `SKILL.md` rather than split across `references/` files)
 
 ---
 
