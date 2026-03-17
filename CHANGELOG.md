@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-03-17
+
+### Added
+
+- Added `/gh-fix-ci` skill — inspects failing GitHub Actions CI on a PR, fetches logs, summarizes root cause, and proposes a fix with user approval (adapted from OpenAI Codex Skills)
+- Added `/gh-address-comments` skill — fetches PR review comments via GraphQL, presents a numbered list, and applies selected fixes (adapted from OpenAI Codex Skills)
+- Updated README with Source column and separate Adaptation Details sections for Anthropic and OpenAI skills
+- Documented skill registration process in DEVELOPMENT.md
+
+### Changed
+
+- Registered all 12 skills in `package.json` `contributes.chatSkills` (conventions-improver, gh-address-comments, gh-fix-ci were previously missing)
+
 ## [0.1.0] - 2026-03-16
 
 ### Added
