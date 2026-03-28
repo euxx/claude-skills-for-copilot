@@ -1,7 +1,7 @@
 ---
 name: silent-failure-hunter
 description: Audits error handling for silent failures, inadequate user feedback, and unjustified fallback behavior. Finds issues in catch blocks, fallbacks, and error paths. Use after modifying error handling code.
-argument-hint: '[file or directory to audit]'
+argument-hint: "[file or directory to audit]"
 user-invocable: true
 ---
 

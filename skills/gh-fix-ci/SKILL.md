@@ -1,7 +1,7 @@
 ---
 name: gh-fix-ci
 description: Debug failing GitHub Actions CI checks on the current branch's PR using the gh CLI — inspect logs, summarize root cause, and propose a focused fix plan before implementing.
-argument-hint: '[PR number or URL (optional; defaults to current branch PR)]'
+argument-hint: "[PR number or URL (optional; defaults to current branch PR)]"
 user-invocable: true
 ---
 

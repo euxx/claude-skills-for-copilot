@@ -1,7 +1,7 @@
 ---
 name: conventions-improver
 description: Audit and improve project conventions files (AGENTS.md, CLAUDE.md, GEMINI.md). Scans for all conventions files, evaluates quality against a scoring rubric, outputs a quality report, then makes targeted improvements with user approval. Use when asked to check, audit, update, or improve AGENTS.md or similar files.
-argument-hint: '[path or leave blank to scan entire workspace]'
+argument-hint: "[path or leave blank to scan entire workspace]"
 user-invocable: true
 ---
 

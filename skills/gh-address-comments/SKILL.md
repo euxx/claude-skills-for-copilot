@@ -1,7 +1,7 @@
 ---
 name: gh-address-comments
 description: Fetch all review comments and threads on the current branch's open GitHub PR using the gh CLI, present a numbered summary, and address the ones the user selects.
-argument-hint: '[comment numbers to address (optional; if omitted, shows all and asks)]'
+argument-hint: "[comment numbers to address (optional; if omitted, shows all and asks)]"
 user-invocable: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: type-design-analyzer
 description: Analyzes type design quality by rating encapsulation, invariant expression, usefulness, and enforcement. Helps design types that make invalid states unrepresentable. Use when reviewing new types or data models.
-argument-hint: '[file or directory with types/interfaces to analyze]'
+argument-hint: "[file or directory with types/interfaces to analyze]"
 user-invocable: true
 ---
 

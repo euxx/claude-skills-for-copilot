@@ -1,7 +1,7 @@
 ---
 name: review-toolkit
 description: Orchestrates a comprehensive code review using up to 6 specialist skills. Dispatches code-review, code-simplifier, comment-analyzer, silent-failure-hunter, type-design-analyzer, and test-analyzer based on the scope of changes. Use for thorough end-to-end review of code changes.
-argument-hint: '[file, directory, or git diff to review]'
+argument-hint: "[file, directory, or git diff to review]"
 user-invocable: true
 ---
 

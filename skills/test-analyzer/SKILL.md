@@ -1,7 +1,7 @@
 ---
 name: test-analyzer
 description: Reviews test coverage quality from a behavioral perspective, identifying critical gaps and test quality issues. Does not check line coverage — checks meaningful scenario coverage. Use after adding or modifying tests.
-argument-hint: '[file, directory, or test suite to analyze]'
+argument-hint: "[file, directory, or test suite to analyze]"
 user-invocable: true
 ---
 

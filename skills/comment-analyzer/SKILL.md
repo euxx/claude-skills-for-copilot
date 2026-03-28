@@ -1,7 +1,7 @@
 ---
 name: comment-analyzer
 description: Analyzes code comments for accuracy, completeness, and long-term maintainability. Detects comment rot and misleading documentation. Use after adding or modifying code comments.
-argument-hint: '[file or directory to analyze]'
+argument-hint: "[file or directory to analyze]"
 user-invocable: true
 ---
 

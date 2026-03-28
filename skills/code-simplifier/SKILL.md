@@ -1,7 +1,7 @@
 ---
 name: code-simplifier
 description: Simplifies and refines code for clarity, consistency, and maintainability while preserving all functionality. Works on recently modified code, a set of changes, or the whole codebase.
-argument-hint: '[file, directory, code changes, or whole codebase]'
+argument-hint: "[file, directory, code changes, or whole codebase]"
 user-invocable: true
 ---
 

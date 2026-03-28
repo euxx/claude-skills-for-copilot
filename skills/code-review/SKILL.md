@@ -1,7 +1,7 @@
 ---
 name: code-review
 description: Multi-agent code review for local changes, files, or directories. Detects bugs, security issues, and conventions-file violations (AGENTS.md/CLAUDE.md/GEMINI.md).
-argument-hint: '[file, directory, or git diff]'
+argument-hint: "[file, directory, or git diff]"
 user-invocable: true
 ---
 

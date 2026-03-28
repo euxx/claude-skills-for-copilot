@@ -1,7 +1,7 @@
 ---
 name: feature-dev
 description: Guided feature development with multi-agent codebase understanding, architecture design, and implementation review. Use when starting a new feature or implementing a significant change.
-argument-hint: '[feature description]'
+argument-hint: "[feature description]"
 user-invocable: true
 ---
 
