@@ -20,19 +20,18 @@
     "ci": "npm run test && npm run lint && npm run format:check",
     "test": "echo 'No tests'  && exit 0",
     "lint": "echo 'No lint'  && exit 0",
-    "format": "prettier --write \"**/*.md\"",
-    "format:check": "prettier --check \"**/*.md\"",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check .",
     "package": "npx @vscode/vsce package --no-dependencies",
     "prepare": "husky"
   },
   "devDependencies": {
     "husky": "latest",
-    "lint-staged": "latest",
-    "prettier": "latest"
+    "lint-staged": "latest"
   },
   "lint-staged": {
-    "*.md": [
-      "prettier --write --prose-wrap preserve"
+    "*.{md,yml,yaml,json}": [
+      "oxfmt --write"
     ]
   },
   "contributes": {
