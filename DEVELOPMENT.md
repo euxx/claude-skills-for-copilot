@@ -23,9 +23,8 @@ Open the project in VS Code and press **F5** to launch the Extension Development
 | ---------------------- | ------------------------------------- |
 | `npm test`             | Run tests (Vitest)                    |
 | `npm run ci`           | Run all checks (test + lint + format) |
-| `npm run lint`         | Lint code (ESLint)                    |
-| `npm run lint:fix`     | Lint and auto-fix                     |
-| `npm run format`       | Format code with Prettier             |
+| `npm run lint`         | Lint code (oxlint)                    |
+| `npm run format`       | Format code (oxfmt)                   |
 | `npm run format:check` | Check code formatting                 |
 | `npm run package`      | Package extension as `.vsix`          |
 

@@ -1,10 +1,7 @@
 .gitignore
-.prettierignore
-.prettierrc
 .husky/
 .github/
 .vscode/
-eslint.config.mjs
 vitest.config.mjs
 tests/
 scripts/
