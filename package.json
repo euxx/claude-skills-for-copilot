@@ -52,10 +52,16 @@
         "path": "./skills/frontend-design/SKILL.md"
       },
       {
+        "path": "./skills/frontend-layout/SKILL.md"
+      },
+      {
         "path": "./skills/gh-address-comments/SKILL.md"
       },
       {
         "path": "./skills/gh-fix-ci/SKILL.md"
+      },
+      {
+        "path": "./skills/mcp-server-dev/SKILL.md"
       },
       {
         "path": "./skills/review-toolkit/SKILL.md"

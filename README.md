@@ -14,8 +14,10 @@ GitHub Copilot agent skills adapted from [Anthropic Claude plugins](https://gith
 | `/conventions-improver`  | Audit and improve AGENTS.md/CLAUDE.md/GEMINI.md quality               | Anthropic |
 | `/feature-dev`           | Guided feature development with architecture design and review        | Anthropic |
 | `/frontend-design`       | Create production-grade frontend interfaces with high design quality  | Anthropic |
+| `/frontend-layout`       | Art-direction-led composition for landing pages and app UI            | OpenAI    |
 | `/gh-address-comments`   | Fetch PR review comments and address the selected ones via gh CLI     | OpenAI    |
 | `/gh-fix-ci`             | Debug failing GitHub Actions CI checks and fix after approval         | OpenAI    |
+| `/mcp-server-dev`        | Guide building MCP servers: deployment model, tool patterns, scaffold | Anthropic |
 | `/review-toolkit`        | Orchestrated end-to-end review (up to 6 specialist sub-skills)        | Anthropic |
 | `/security-threat-model` | AppSec-grade threat model: trust boundaries, abuse paths, mitigations | OpenAI    |
 | `/silent-failure-hunter` | Find silent failures, swallowed errors, and unjustified fallbacks     | Anthropic |
@@ -197,6 +199,22 @@ The original agent has an informal instruction style and uses XML `<example>` tr
 
 ---
 
+#### `/mcp-server-dev`
+
+**Source:** [`plugins/mcp-server-dev/skills/build-mcp-server/SKILL.md`](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/mcp-server-dev/skills/build-mcp-server/SKILL.md)
+
+The original skill is structured around Claude Code's tool ecosystem and references six companion `references/` files (remote-http-scaffold, deploy-cloudflare-workers, tool-design, auth, elicitation, server-capabilities). It also hands off to two peer skills (`build-mcp-app`, `build-mcpb`) that exist in the same plugin but are not yet adapted.
+
+**Changes:**
+
+- Renamed from `build-mcp-server` to `mcp-server-dev` to match the parent plugin name and our naming convention
+- Removed `version:` frontmatter field (not used by VS Code Copilot)
+- Added `argument-hint` and `user-invocable: true` frontmatter fields
+- Removed all `references/xxx.md` internal file pointers; Phase 5 now includes inline scaffolding guidance for each deployment path, and replaced the References section with links to public MCP SDK repositories and the MCP specification
+- Removed hand-off instructions for `build-mcp-app` and `build-mcpb` (those sub-skills don't exist in this repo); replaced with inline guidance to continue implementing the chosen approach
+
+---
+
 ### From OpenAI Codex Skills
 
 Source: [openai/skills](https://github.com/openai/skills) (Apache 2.0 per-skill). The original skills target the OpenAI Codex agent.
@@ -252,6 +270,20 @@ The original skill references two companion files (`references/prompt-template.m
 - Inlined the Mermaid diagram rules and required output section list
 - Removed references to the separate `references/` directory
 - Added `argument-hint` and `user-invocable: true` frontmatter fields
+
+---
+
+#### `/frontend-layout`
+
+**Source:** [`skills/.curated/frontend-skill/SKILL.md`](https://github.com/openai/skills/blob/main/skills/.curated/frontend-skill/SKILL.md)
+
+The original skill is already in `SKILL.md` format and focuses on art direction, composition restraint, and image-led hierarchy — complementing the existing `/frontend-design` skill which emphasises bold aesthetic direction.
+
+**Changes:**
+
+- Renamed from `frontend-skill` to `frontend-layout` to clarify the complementary scope alongside the existing `frontend-design` skill
+- Added `argument-hint` and `user-invocable: true` frontmatter fields
+- Minor formatting normalisation (table alignment, bullet indentation)
 
 ## License
 

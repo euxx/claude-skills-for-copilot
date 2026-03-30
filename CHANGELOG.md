@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Added `/mcp-server-dev` skill — guides building MCP servers end-to-end: discovery (what it connects to, who uses it), deployment model selection (remote HTTP, MCPB, local stdio), tool-design patterns (one-per-action vs search+execute), framework choice (TS SDK / FastMCP), and inline scaffolding (adapted from Anthropic Claude Plugins)
+- Added `/frontend-layout` skill — art-direction-led frontend composition for landing pages and app UI: image-led hierarchy, restrained layouts, content structure, and intentional motion (adapted from OpenAI Codex Skills)
+
 ## [0.3.0] - 2026-03-17
 
 ### Added
