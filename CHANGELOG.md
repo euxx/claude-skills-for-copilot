@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-03-30
+
 ### Added
 
 - Added `/mcp-server-dev` skill — guides building MCP servers end-to-end: discovery (what it connects to, who uses it), deployment model selection (remote HTTP, MCPB, local stdio), tool-design patterns (one-per-action vs search+execute), framework choice (TS SDK / FastMCP), and inline scaffolding (adapted from Anthropic Claude Plugins)
