@@ -52,10 +52,21 @@
 
 7. Update the release notes on GitHub to match `CHANGELOG.md`:
 
+   Write the notes in Markdown format to a temp file, then pass it via `--notes-file`:
+
    ```bash
-   gh release edit vX.Y.Z --notes "## What's Changed
+   gh release edit vX.Y.Z --notes-file /path/to/notes.md
+   ```
+
+   Notes format:
+
+   ```markdown
+   ## What's Changed
+
+   ### Added/Changed/Fixed
+
    - Change 1
    - Change 2
 
-   **Full Changelog**: https://github.com/euxx/claude-skills-for-copilot/compare/vPREV...vX.Y.Z"
+   **Full Changelog**: https://github.com/euxx/claude-skills-for-copilot/compare/vPREV...vX.Y.Z
    ```
