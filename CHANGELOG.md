@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.4.1] - 2026-03-31
+
+### Fixed
+
+- Fixed DEVELOPMENT.md incorrectly referencing Vitest and oxlint for no-op test/lint scripts
+- Fixed fullwidth tilde character (`～`) in AGENTS.md local mirror paths preventing shell path resolution
+- Fixed README adaptation descriptions for `/silent-failure-hunter` and `/comment-analyzer` to match actual SKILL.md content
+- Removed inconsistent double-quote wrapping on `security-threat-model` SKILL.md description field
+
 ## [0.4.0] - 2026-03-30
 
 ### Added
