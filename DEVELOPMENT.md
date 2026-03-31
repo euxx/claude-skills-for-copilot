@@ -21,9 +21,9 @@ Open the project in VS Code and press **F5** to launch the Extension Development
 
 | Command                | Description                           |
 | ---------------------- | ------------------------------------- |
-| `npm test`             | Run tests (Vitest)                    |
+| `npm test`             | Run tests (no-op placeholder)         |
 | `npm run ci`           | Run all checks (test + lint + format) |
-| `npm run lint`         | Lint code (oxlint)                    |
+| `npm run lint`         | Lint (no-op placeholder)              |
 | `npm run format`       | Format code (oxfmt)                   |
 | `npm run format:check` | Check code formatting                 |
 | `npm run package`      | Package extension as `.vsix`          |
@@ -35,7 +35,7 @@ npm test     # Run all tests
 npm run ci   # Run tests + lint + format check in one step
 ```
 
-Tests use [Vitest](https://vitest.dev/).
+Test and lint scripts are currently no-op placeholders.
 
 ## Local Packaging
 

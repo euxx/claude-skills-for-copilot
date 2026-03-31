@@ -14,8 +14,8 @@ See [RELEASE.md](RELEASE.md) for the release process.
 
 Skills are adapted from two upstream repos:
 
-- **Anthropic**: `https://github.com/anthropics/claude-plugins-official` — local mirror at `～/projects/claude-plugins-official`
-- **OpenAI**: `https://github.com/openai/skills` — local mirror at `～/projects/skills`
+- **Anthropic**: `https://github.com/anthropics/claude-plugins-official` — local mirror at `~/projects/claude-plugins-official`
+- **OpenAI**: `https://github.com/openai/skills` — local mirror at `~/projects/skills`
 
 Last upstream check: **2026-03-30** (v0.4.0)
 

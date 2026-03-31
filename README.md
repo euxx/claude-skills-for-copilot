@@ -89,7 +89,7 @@ The original agent embeds lengthy XML `<example>` transcripts inside the `descri
 **Changes:**
 
 - Stripped all XML examples from the frontmatter description
-- Restructured the body as a numbered analysis framework (comment types → accuracy check → completeness check → maintainability check → scoring)
+- Restructured the body as a numbered analysis framework (accuracy verification → completeness assessment → long-term value evaluation → misleading element identification)
 - Added `argument-hint` for user-facing guidance
 
 ---
@@ -165,7 +165,7 @@ The original agent has an extensive `description` field with XML `<example>` blo
 **Changes:**
 
 - Stripped XML examples from the frontmatter description
-- Restructured the body as a numbered review process with explicit confidence threshold (report only if confidence ≥ 80)
+- Restructured the body as a numbered review process (identify error handling → scrutinize each handler → check for hidden failure patterns)
 - Added `argument-hint` for user-facing guidance
 
 ---
