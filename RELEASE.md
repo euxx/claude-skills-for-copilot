@@ -48,8 +48,6 @@
    gh release view vX.Y.Z
    ```
 
-<!-- END-SHARED -->
-
 7. Update the release notes on GitHub to match `CHANGELOG.md`:
 
    Write the notes in Markdown format to a temp file, then pass it via `--notes-file`:
@@ -68,5 +66,7 @@
    - Change 1
    - Change 2
 
-   **Full Changelog**: https://github.com/euxx/claude-skills-for-copilot/compare/vPREV...vX.Y.Z
+   **Full Changelog**: https://github.com/PUBLISHER/extension-name/compare/vPREV...vX.Y.Z
    ```
+
+   > `PUBLISHER` and `extension-name` come from the `publisher` and `name` fields in `package.json`.

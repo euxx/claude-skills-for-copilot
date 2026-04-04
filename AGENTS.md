@@ -10,6 +10,8 @@ See [DEVELOPMENT.md](DEVELOPMENT.md) for all available scripts.
 
 See [RELEASE.md](RELEASE.md) for the release process.
 
+<!-- END-SHARED -->
+
 ## Upstream Adaptation Tracking
 
 Skills are adapted from two upstream repos:
