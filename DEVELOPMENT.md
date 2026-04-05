@@ -19,20 +19,21 @@ Open the project in VS Code and press **F5** to launch the Extension Development
 
 ## Scripts
 
-| Command                | Description                           |
-| ---------------------- | ------------------------------------- |
-| `npm test`             | Run tests (Vitest)                    |
-| `npm run ci`           | Run all checks (test + lint + format) |
-| `npm run lint`         | Lint code (oxlint)                    |
-| `npm run format`       | Format code (oxfmt)                   |
-| `npm run format:check` | Check code formatting                 |
-| `npm run package`      | Package extension as `.vsix`          |
+| Command                | Description                                    |
+| ---------------------- | ---------------------------------------------- |
+| `npm test`             | Run tests (Vitest)                             |
+| `npm run ci`           | Run all checks (syntax + lint + format + test) |
+| `npm run syntax`       | Check source files for syntax errors           |
+| `npm run lint`         | Lint code (oxlint)                             |
+| `npm run format`       | Format code (oxfmt)                            |
+| `npm run format:check` | Check code formatting                          |
+| `npm run package`      | Package extension as `.vsix`                   |
 
 ## Testing
 
 ```bash
 npm test     # Run all tests
-npm run ci   # Run tests + lint + format check in one step
+npm run ci   # Run syntax + lint + format + test in one step
 ```
 
 Tests use [Vitest](https://vitest.dev/).
