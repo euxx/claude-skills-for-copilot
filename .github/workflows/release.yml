@@ -45,7 +45,7 @@ jobs:
         run: |
           TAG="v${{ steps.pkg.outputs.version }}"
           if [[ "${{ inputs.overwrite }}" == "true" ]]; then
-            gh release delete "$TAG" --yes --cleanup-tag 2>/dev/null || true
+            gh release delete "$TAG" --yes --cleanup-tag || true
           fi
           gh release create "$TAG" \
             --title "$TAG" \
