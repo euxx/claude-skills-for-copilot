@@ -4,7 +4,7 @@
 
 After modifying code, run:
 
-- `npm run ci` — tests + lint + format check
+- `npm run ci` — syntax + lint + format + tests
 
 See [DEVELOPMENT.md](DEVELOPMENT.md) for all available scripts.
 
