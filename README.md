@@ -285,6 +285,11 @@ The original skill is already in `SKILL.md` format and focuses on art direction,
 - Added `argument-hint` and `user-invocable: true` frontmatter fields
 - Minor formatting normalisation (table alignment, bullet indentation)
 
+## You may also like
+
+- <img src="https://github.com/euxx/github-copilot-usage/raw/main/images/icon.png" width="20" align="absmiddle"> [**GitHub Copilot Usage**](https://marketplace.visualstudio.com/items?itemName=euxx.github-copilot-usage) - Shows Copilot Premium request quota usage in the VS Code status bar
+- <img src="https://github.com/euxx/editor-tweaks/raw/main/images/icon.png" width="20" align="absmiddle"> [**Editor Tweaks**](https://marketplace.visualstudio.com/items?itemName=euxx.editor-tweaks) - A collection of small VS Code editor utilities packed into a single extension
+
 ## License
 
 This project is licensed under [MIT](LICENSE).
